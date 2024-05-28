@@ -1,0 +1,121 @@
+/* Lógico_1: */
+
+CREATE TABLE Usuario (
+    documento_usuario INT PRIMARY KEY,
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(50)
+);
+
+CREATE TABLE Endereco_User (
+    id_endereco INT PRIMARY KEY,
+    documento_usuario INT,
+    endereco VARCHAR(50),
+    numero VARCHAR(50),
+    bairro VARCHAR(50),
+    cidade VARCHAR(50),
+    estado VARCHAR(2)
+);
+
+CREATE TABLE Telefone_User (
+    id_telefone INT PRIMARY KEY,
+    fk_documento_usuario INT,
+    ddd VARCHAR(5),
+    numero VARCHAR(11)
+);
+
+CREATE TABLE Administrador (
+    id_adm INT PRIMARY KEY,
+    email VARCHAR(50),
+    senha VARCHAR(50),
+    documento_usuario INT
+);
+
+CREATE TABLE Email_Usuario (
+    id_email INT PRIMARY KEY,
+    email VARCHAR(50),
+    documento_usuario INT
+);
+
+CREATE TABLE Reserva (
+    id_reserva INT PRIMARY KEY,
+    fk_local INT,
+    fk_documento_usuario INT,
+    data_hora_inicio VARCHAR(10),
+    data_hora_termino VARCHAR(10),
+    Status VARCHAR(10),
+    finalidade_reserva VARCHAR(50),
+    numero_participantes INT,
+    observacoes VARCHAR(200)
+);
+
+CREATE TABLE Endereco_Local (
+    id_endereco INT PRIMARY KEY,
+    fk_local INT,
+    endereco VARCHAR(50),
+    numero VARCHAR(50),
+    bairro VARCHAR(50),
+    cidade VARCHAR(50),
+    estado VARCHAR(2)
+);
+
+CREATE TABLE Local (
+    id_local INT PRIMARY KEY,
+    nome VARCHAR(50),
+    capacidade INT,
+    fk_tipo_local INT
+);
+
+CREATE TABLE Tipo_Local (
+    id_tipo_local INT,
+    tipo VARCHAR(100)
+);
+
+CREATE TABLE Recurso (
+    id_recurso INT PRIMARY KEY,
+    nome VARCHAR(50),
+    descricao VARCHAR(200),
+    disponibilidade INT
+);
+
+CREATE TABLE Reserva_Recurso (
+    fk_reserva INT,
+    fk_recurso INT,
+    quantidade VARCHAR(50)
+);
+ 
+ALTER TABLE Endereco_User ADD CONSTRAINT FK_Endereco_User_1
+    FOREIGN KEY (documento_usuario)
+    REFERENCES Usuario (documento_usuario);
+ 
+ALTER TABLE Telefone_User ADD CONSTRAINT FK_Telefone_User_1
+    FOREIGN KEY (fk_documento_usuario)
+    REFERENCES Usuario (documento_usuario);
+ 
+ALTER TABLE Administrador ADD CONSTRAINT FK_Administrador_2
+    FOREIGN KEY (documento_usuario???)
+    REFERENCES ??? (???);
+ 
+ALTER TABLE Email_Usuario ADD CONSTRAINT FK_Email_Usuario_2
+    FOREIGN KEY (documento_usuario???)
+    REFERENCES ??? (???);
+ 
+ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_2
+    FOREIGN KEY (fk_local)
+    REFERENCES Local (id_local);
+ 
+ALTER TABLE Reserva ADD CONSTRAINT FK_Reserva_3
+    FOREIGN KEY (fk_documento_usuario???)
+    REFERENCES Recurso (???);
+ 
+ALTER TABLE Endereco_Local ADD CONSTRAINT FK_Endereco_Local_1
+    FOREIGN KEY (fk_local)
+    REFERENCES Endereco_Local (id_endereco);
+ 
+ALTER TABLE Local ADD CONSTRAINT FK_Local_1
+    FOREIGN KEY (fk_tipo_local???)
+    REFERENCES ??? (???);
+ 
+ALTER TABLE Reserva_Recurso ADD CONSTRAINT FK_Reserva_Recurso_1
+    FOREIGN KEY (fk_reserva???)
+    REFERENCES ??? (???);

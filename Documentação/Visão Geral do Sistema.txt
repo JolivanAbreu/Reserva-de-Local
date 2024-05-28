@@ -1,0 +1,34 @@
+Visão Geral do Sistema:
+O Sistema de Reserva de Locais é uma aplicação web projetada para facilitar o gerenciamento e reserva de locais para eventos, reuniões, conferências e outros fins. Ele oferece funcionalidades avançadas, incluindo autenticação e autorização, gestão de recursos, integração com calendários externos e notificações em tempo real.
+
+Funcionalidades Principais:
+Autenticação e Autorização:
+Os usuários podem se autenticar utilizando login e senha.
+O sistema oferece autenticação segura com suporte a autenticação de dois fatores.
+Diferentes papéis de usuário (administrador, funcionário, cliente) têm diferentes níveis de permissões.
+Reserva de Locais:
+Os usuários autorizados podem criar novas reservas selecionando o local desejado, datas e horários de início e término, finalidade da reserva, número de participantes e recursos necessários.
+O sistema verifica a disponibilidade do local e dos recursos antes de confirmar a reserva.
+As reservas podem ser editadas ou canceladas dentro de um prazo especificado.
+Gestão de Recursos:
+Os administradores podem adicionar, editar e excluir recursos disponíveis para reserva, incluindo equipamentos audiovisuais, serviços de catering, mobiliário, etc.
+Os recursos podem ser marcados como disponíveis ou indisponíveis para reserva em determinados períodos.
+Histórico de Reservas:
+O sistema mantém um registro detalhado de todas as reservas, incluindo informações como ID da reserva, local, datas e horários, status, finalidade, número de participantes, recursos associados, etc.
+Os usuários podem visualizar seu próprio histórico de reservas, enquanto os administradores têm acesso ao histórico completo de todas as reservas.
+Integração com Calendário:
+Os usuários podem exportar suas reservas para calendários externos, como Google Calendar, Outlook, etc.
+As atualizações feitas no sistema de reservas são automaticamente refletidas nos calendários externos para evitar conflitos de agenda.
+Notificações em Tempo Real:
+O sistema envia notificações em tempo real para os usuários sobre o status de suas reservas, alterações na disponibilidade de locais ou recursos, confirmações de reserva, cancelamentos, etc.
+As notificações podem ser enviadas por email, mensagens push, mensagens no sistema, ou outros meios de comunicação.
+Tecnologias Utilizadas:
+Linguagem de Programação: Python
+Framework Web: Django
+Banco de Dados: PostgreSQL
+Autenticação e Autorização: Django Authentication System com JWT (JSON Web Tokens)
+Integração com Calendário: Google Calendar API
+Notificações em Tempo Real: Django Channels para WebSockets
+Frontend: HTML5, CSS3, JavaScript (com frameworks como React.js ou Vue.js)
+Arquitetura do Sistema:
+O Sistema de Reserva de Locais segue uma arquitetura baseada em microserviços, com componentes separados para o backend, frontend, autenticação, gestão de recursos, integração com calendários externos e notificações em tempo real. A comunicação entre os microserviços é realizada por meio de APIs RESTful e WebSockets.
